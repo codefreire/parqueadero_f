@@ -1,9 +1,6 @@
 # parqueadero_f
 Implementación de ejercicio en flask
 
-# Ejercicio parqueadero flask
-Ejemplo del uso del framework flask
-
 # Flask documentación
 https://flask.palletsprojects.com/en/1.1.x/
 
