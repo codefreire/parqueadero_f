@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="parqueadero f">
+        <meta name="robots" content="index,follow">
+        <meta name="author" content="Carlos Freire">
+        <title>Parqueadero</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+    <body>
+        <br>
+        <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="container">
+                <p class="text-center fs-1">Pases parqueadero</p>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <div class="card">
+                        <div class="card-header">Pases</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Usuario</th>
+                                        <th scope="col">Fecha Compra</th>
+                                        <th scope="col">Tipo de pase</th>
+                                        <th scope="col">Pases adquiridos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for p in pases %}
+                                        <tr>
+                                            <th scope="row">{{p.usuarioPase.usuario_id}}</th>
+                                            <th scope="row">{{p.usuarioPase.usuario_nombre}}</th>
+                                            <th scope="row">{{p.fecha_compra}}</th>
+                                            <th scope="row">{{p.tipo_pase}}</th>
+                                            <th scope="row">{{p.cantidad}}</th>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <form action="/" method="POST">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label for="initialDate">Ingrese la fecha</label>
+                                <input id="initialDate" name="initialDate" type="date" class="form-control" required>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="endDate">Fecha actual</label>
+                                <p id="endDate" name="endDate">{{ today }}</p>
+                            </div>
+                            <div class="col-md-2 d-grid">
+                                <br>
+                                <input type="submit" value="Aceptar" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <div class="card">
+                        <div class="card-header">Pases restantes</div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Usuario</th>
+                                        <th scope="col">Fecha expiración</th>
+                                        <th scope="col">Pases que quedan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for cp in consultaPases %}
+                                        <tr>
+                                            <th scope="row">{{cp[0]}}</th>
+                                            <th scope="row">{{cp[1]}}</th>
+                                            <th scope="row">{{cp[2]}}</th>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </body>
+</html>
