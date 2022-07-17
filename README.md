@@ -1,3 +1,6 @@
+# importante:
+Si el ejercicio no carga a la primera, recargar.
+
 # Tema:
 Ejercicio sistema de pases con flask
 
