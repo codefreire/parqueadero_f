@@ -12,7 +12,7 @@ de acuerdo a una lógica de tarifas. Se explica a fondo el ejercicio.
 https://github.com/codefreire/parqueadero_f
 
 # URL despliegue:
-http://codefreire.pythonanywhere.com/
+https://codefreire.pythonanywhere.com/
 
 # Flask documentación
 https://flask.palletsprojects.com/en/1.1.x/
